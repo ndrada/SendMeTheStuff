@@ -1,0 +1,411 @@
+/* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap');
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background-color: #172627;
+  color: #fdfffe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Section 1 */
+.section-1 {
+  flex: 1;
+  display: flex;
+  width: 50vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  width: 30vw;
+  min-width: 250px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #20cd8d;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Section 2 */
+.section-2 {
+  flex: 1;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.instruction {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.dropzone {
+  width: 40vw;
+  height: 40vw;
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: 25px;
+  background-color: #20cd8d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.1s, color 0.1s;
+  overflow: hidden;
+}
+
+.dropzone.filled {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dropzone.filled .click-me {
+  display: none;
+}
+
+.dropzone.filled .add-more-stuff {
+  display: block;
+}
+
+.dropzone:hover {
+  background-color: #fdfffe;
+  color: #20cd8d;
+}
+
+.dropzone:hover .add-more-stuff{
+  color: #20cd8d;
+}
+
+.plus {
+  font-size: 8rem;
+}
+
+.dropzone.loading .instruction, 
+.dropzone.loading .plus,
+.dropzone.loading .add-more-stuff {
+  display: none;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 5px;
+}
+
+.file-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #172627 white;
+}
+
+.file-icons::-webkit-scrollbar {
+  width: 10px;
+}
+
+.file-icons::webkit-scrolllbar-thumb {
+  background-color: #172627;
+}
+
+.file-icons::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.file-icon {
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 100px;
+  max-height: 100px;
+  width: 10vw;
+  height: 10vw;
+}
+
+.file-name {
+  margin-top: 5px;
+  font-size: 0.7rem;
+  color: #172627;
+  word-wrap: break-word;
+  min-width: 50px;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.add-more-stuff {
+  display: none;
+  font-size: 1rem;
+  color: #fdfffe;
+  font-weight: bold;
+}
+
+.send-button {
+  width: 40vw;
+  min-width: 300px;
+  height: 80px;
+  padding: 0 5px;
+  border-radius: 25px;
+  margin-top: 0.5rem;
+  background-color: #20cd8d;
+  font-size: 2rem;
+  font-family: Nunito, sans-serif;
+  font-weight: bold;
+  color: #fdfffe;
+  border: 3px solid #20cd8d;
+}
+
+.send-button:hover {
+  background-color: #fdfffe;
+  color: #20cd8d;
+  transition: background-color 0.1s, color 0.1s;
+}
+
+.loading-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.loading-bar-container {
+  width: 40vw;
+  height: 80px;
+  min-width: 300px;
+  padding: 0px 5px;
+  margin-top: 0.5rem; 
+  display: flex;
+  border-radius: 30px;
+  align-items: center;
+  border: 3px solid #20cd8d;
+}
+
+.loading-bar {
+  width: 0vw;
+  height: 70px;
+  border-radius: 25px;
+  background-color: #20cd8d;
+  animation: loading 2s forwards;
+  transform-origin: left;
+  text-align: left;
+}
+
+@keyframes loading {
+  0% {
+    width: 0vw;
+  }
+  100% {
+    width: 40vw;
+  }
+}
+
+/* final page */
+.final-page, .error-page {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-logo {
+  width: 6vw;
+  min-width: 100px;
+  max-width: 150px;
+  font-weight: bold;
+  color: #fdfffe;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.click-me {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.clickable-link {
+  font-size: 8rem;
+  color: #20cd8d;
+  cursor: pointer;
+  transition: color 0.1s;
+  font-weight: bold;
+}
+
+.clickable-link:hover {
+  color: #fdfffe;
+}
+
+.after-copy{
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-text {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-copied, .error-text h1 {
+  font-size: 4rem;
+  margin-top: 0.5rem;
+  color: #20cd8d;
+  text-align: center;
+}
+
+.link-copied p, .error-text p {
+  font-size: 1rem;
+  color: #fdfffe;
+  text-transform: uppercase;
+}
+
+.reset-button {
+  margin: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  border: 5px solid #20cd8d;
+  color: #20cd8d;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.1s, color 0.1s;
+}
+
+.reset-button:hover {
+  color: #20cd8d;
+  background-color: #fdfffe;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+    height: 85vh;
+  }
+
+  .section-1, .section-2 {
+    width: 100vw;
+  }
+
+  .section-1 {
+    height: 30vh;
+  }
+
+  .section-2 {
+    margin-bottom: 1.5rem;
+    height: 40vh;
+  }
+
+  .dropzone {
+    width: 80vw;
+    height: 80vw;
+    font-size: 14px; 
+  }
+
+  .file-icons {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 10px; 
+  }
+
+  .send-button {
+    width: 80vw;
+    padding: 12px; 
+  }
+
+  .loading-bar-container {
+    width: 80vw;
+    height: 70px;
+    padding: 5px;
+  }
+
+  .loading-bar {
+    height: 60px;
+  }
+
+  @keyframes loading {
+    0% {
+      width: 0vw;
+    }
+    100% {
+      width: 80vw;
+    }
+  }
+
+  .instruction {
+    font-size: 16px; 
+    text-align: center; 
+    margin: 10px 0; 
+  }
+
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .loading-text {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .clickable-link {
+    font-size: 2rem;
+  }
+
+  .link-copied, .error-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .final-page, .error-page {
+    height: 80vh;
+  }
+
+  body {
+    overflow-x: hidden; 
+  }
+}
